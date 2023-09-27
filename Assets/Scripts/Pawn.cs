@@ -7,7 +7,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(AgentOverride2d))]
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CircleCollider2D))]
-public class Pawn : MonoBehaviour
+public class Pawn : PawnBase
 {
     private NavMeshAgent agent;
     private Rigidbody2D rb;
