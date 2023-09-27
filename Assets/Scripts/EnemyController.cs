@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private Pawn pawn;
-    [SerializeField] private Pawn playerPawn;
+    [SerializeField] private PawnBase playerPawn;
     [SerializeField] private float distanceUntilStop = 3;
     [SerializeField] private float targetingDuration = 1;
     [SerializeField] private EnemyAnimator enemyAnimator;
@@ -23,7 +23,7 @@ public class EnemyController : MonoBehaviour
 
     private void UpdateMovement()
     {
-        if (Vector2.Distance(pawn.GetPosition(), playerPawn.GetPosition()) < distanceUntilStop)
+        if (Vector2.Distance(playerPawn.GetPosition(), pawn.GetPosition()) < distanceUntilStop)
         {
             pawn.CancelMovement();
             TargetPlayer();

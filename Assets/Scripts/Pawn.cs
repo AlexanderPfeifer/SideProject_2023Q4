@@ -20,6 +20,7 @@ public class Pawn : MonoBehaviour
 
     public void MoveByDistance(Vector2 movement)
     {
+        CancelMovement();
         rb.AddForce(movement, ForceMode2D.Force);
     }
 
@@ -33,7 +34,7 @@ public class Pawn : MonoBehaviour
     {
         agent.isStopped = true;
     }
-
+    
     public Vector2 GetPosition()
     {
         return (Vector2)transform.position;
